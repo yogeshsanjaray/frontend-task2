@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="task2.css">
+</head>
+<body>
+    <div class="a">1</div>
+    <div class="b">2</div>
+    <div class="c">3</div>
+    <div class="d">4</div>
+    <div class="e">5</div>
+</body>
+<script>
+    let value = document.getElementsByTagName("div");
+    console.log(value);
+
+    for (let i = 0; i < value.length; i++) {
+        value[i].addEventListener("click",function () {
+            let res = 0;
+            let actualIndex = value[i].style.zIndex = res;
+            // console.log(actualIndex)
+            if (actualIndex == res) {
+                value[i].style.zIndex = res + 1;
+                value[i].addEventListener("click",function () {
+                    value[i].style.zIndex = res - 1;
+                })
+            }
+        })
+    }  
+</script> 
+</html>
